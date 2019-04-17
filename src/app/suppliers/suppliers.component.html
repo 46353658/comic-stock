@@ -1,0 +1,25 @@
+<table>
+  <tr>
+    <th> Name: </th>
+    <th> City: </th>
+    <th> Reference: </th>
+  </tr>
+  <tr *ngFor="let supplier of suppliers" (click)="onSelect(supplier)">
+    <td> {{supplier.name}} </td>
+    <td> {{supplier.city}} </td>
+    <td> {{supplier.reference}} </td>
+  </tr>
+</table>
+
+<div *ngIf="selectedSupplier">
+  <h2>Edit supplier:</h2>
+  <div>
+    <label>name: <input [(ngModel)]="selectedSupplier.name" placeholder="name" /></label>
+  </div>
+  <div>
+      <label>city: <input [(ngModel)]="selectedSupplier.city" placeholder="city" /></label>
+  </div>
+  <div>
+      <label>reference: <input [(ngModel)]="selectedSupplier.reference" placeholder="reference" /></label>
+  </div>
+</div>
