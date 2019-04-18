@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Supplier } from '../supplier';
 //import { SUPPLIERS } from '../mock-suppliers'; <-- Components should not be responsible for getting this, should be provided by a service
 import { SupplierService } from '../supplier.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-suppliers',
@@ -15,6 +16,8 @@ export class SuppliersComponent implements OnInit {
 
   selectedSupplier: Supplier;
 
+  returnVar: Observable<any>;
+
   // Without 'Observable' and 'of'
   // getSuppliers(): void {
   //   this.suppliers = this.supplierService.getSuppliers();
@@ -26,6 +29,13 @@ export class SuppliersComponent implements OnInit {
       .subscribe(suppliers => this.suppliers = suppliers);
   }
 
+  getSuppliersFromUrl(): void {
+    this.supplierService.getSuppliersFromUrl()
+      .subscribe((res) => { 
+        console.log("res: " + res);
+      });
+  }
+
   onSelect(supplier: Supplier): void {
     this.selectedSupplier = supplier;
   }
@@ -33,7 +43,8 @@ export class SuppliersComponent implements OnInit {
   constructor(private supplierService: SupplierService) { }
 
   ngOnInit() {
-    this.getSuppliers();
+    // this.getSuppliers();
+    this.getSuppliersFromUrl();
   }
 
 }
