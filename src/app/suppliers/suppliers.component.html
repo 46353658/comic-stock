@@ -1,4 +1,4 @@
-<table>
+<!-- <table>
   <tr>
     <th> Name: </th>
     <th> City: </th>
@@ -9,7 +9,31 @@
     <td> {{supplier.city}} </td>
     <td> {{supplier.reference}} </td>
   </tr>
+</table> -->
+
+<br>
+<div class="row">
+  <input type="text" placeholder="Search" [(ngModel)]="searchText" />
+</div>
+<br>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th> Name: </th>
+        <th> City: </th>
+        <th> Reference: </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let supplier of suppliers | filter:searchText | paginate: {itemsPerPage: 5, currentPage: p}"  (click)="onSelect(supplier)">
+        <td> {{supplier.name}} </td>
+        <td> {{supplier.city}} </td>
+        <td> {{supplier.reference}} </td>
+      </tr>
+    </tbody>
 </table>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
 
 <div *ngIf="selectedSupplier">
   <app-supplier-detail [supplier]="selectedSupplier"></app-supplier-detail>

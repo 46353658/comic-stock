@@ -12,6 +12,8 @@ export class SuppliersComponent implements OnInit {
 
   suppliers: Supplier[];
 
+  p: number = 1;
+
   selectedSupplier: Supplier;
 
   response: any;

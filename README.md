@@ -1,10 +1,15 @@
 # backend
 $ node_modules/.bin/seed
   (populate database)
-
 $ docker-compose up
 ---
 $ docker-build up
+
+# other installs needed
+{Angular material installation}
+npm i ng2-search-filter --save
+npm install ngx-pagination --save
+
 
 # ComicStock
 

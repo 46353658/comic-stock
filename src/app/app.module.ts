@@ -7,6 +7,9 @@ import { SuppliersComponent } from './suppliers/suppliers.component';
 import { SupplierDetailComponent } from './supplier-detail/supplier-detail.component';
 import { HttpClientModule } from '@angular/common/http';
 import { IssuesComponent } from './issues/issues.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { IssuesComponent } from './issues/issues.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    Ng2SearchPipeModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
