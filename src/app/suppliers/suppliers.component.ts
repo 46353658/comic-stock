@@ -16,7 +16,7 @@ export class SuppliersComponent implements OnInit {
 
   selectedSupplier: Supplier;
 
-  returnVar: Observable<any>;
+  response: any;
 
   // Without 'Observable' and 'of'
   // getSuppliers(): void {
@@ -29,12 +29,26 @@ export class SuppliersComponent implements OnInit {
       .subscribe(suppliers => this.suppliers = suppliers);
   }
 
+  // getSuppliersFromUrl(): void {
+  //   this.supplierService.getSuppliersFromUrl()
+  //     .subscribe((res) => { 
+  //       console.log("res: " + res);
+  //       this.response = res;
+  //     });
+  // }
+
   getSuppliersFromUrl(): void {
     this.supplierService.getSuppliersFromUrl()
-      .subscribe((res) => { 
-        console.log("res: " + res);
+      .subscribe({
+        next: (suppliers: any) => {
+          this.suppliers = suppliers.data;
+          // console.log(`this.suppliers ${this.suppliers}`);
+          // debugger;
+          // console.log("data: " + JSON.stringify(suppliers.data));
+        }
       });
   }
+
 
   onSelect(supplier: Supplier): void {
     this.selectedSupplier = supplier;
