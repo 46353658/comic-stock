@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Supplier } from '../supplier';
-import { SUPPLIERS } from '../mock-suppliers';
+//import { SUPPLIERS } from '../mock-suppliers'; <-- Components should not be responsible for getting this, should be provided by a service
+import { SupplierService } from '../supplier.service';
 
 @Component({
   selector: 'app-suppliers',
@@ -9,17 +10,23 @@ import { SUPPLIERS } from '../mock-suppliers';
 })
 export class SuppliersComponent implements OnInit {
 
-  suppliers = SUPPLIERS;
+  // suppliers = SUPPLIERS; <-- Components should not be responsible for getting this, should be provided by a service
+  suppliers: Supplier[];
 
   selectedSupplier: Supplier;
+
+  getSuppliers(): void {
+    this.suppliers = this.supplierService.getSuppliers();
+  }
 
   onSelect(supplier: Supplier): void {
     this.selectedSupplier = supplier;
   }
 
-  constructor() { }
+  constructor(private supplierService: SupplierService) { }
 
   ngOnInit() {
+    this.getSuppliers();
   }
 
 }
