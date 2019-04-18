@@ -15,8 +15,15 @@ export class SuppliersComponent implements OnInit {
 
   selectedSupplier: Supplier;
 
+  // Without 'Observable' and 'of'
+  // getSuppliers(): void {
+  //   this.suppliers = this.supplierService.getSuppliers();
+  // }
+
   getSuppliers(): void {
-    this.suppliers = this.supplierService.getSuppliers();
+    // console.log('getSuppliers async method');
+    this.supplierService.getSuppliers()
+      .subscribe(suppliers => this.suppliers = suppliers);
   }
 
   onSelect(supplier: Supplier): void {
