@@ -11,23 +11,7 @@
   </tr>
 </table>
 
-<!-- <div *ngIf="selectedSupplier">
-  <h2>Edit supplier:</h2>
-  <div>
-    <label>name: <input [(ngModel)]="selectedSupplier.name" placeholder="name" /></label>
-  </div>
-  <div>
-      <label>city: <input [(ngModel)]="selectedSupplier.city" placeholder="city" /></label>
-  </div>
-  <div>
-      <label>reference: <input [(ngModel)]="selectedSupplier.reference" placeholder="reference" /></label>
-  </div>
-</div> -->
-
 <div *ngIf="selectedSupplier">
   <app-supplier-detail [supplier]="selectedSupplier"></app-supplier-detail>
 </div>
 
-<div>
-  Response: {{response|json}}
-</div>
