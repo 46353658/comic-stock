@@ -1,3 +1,11 @@
+# backend
+$ node_modules/.bin/seed
+  (populate database)
+
+$ docker-compose up
+---
+$ docker-build up
+
 # ComicStock
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
