@@ -26,7 +26,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let supplier of suppliers | filter:searchText | paginate: {itemsPerPage: 5, currentPage: p}"  (click)="onSelect(supplier)">
+      <tr *ngFor="let supplier of suppliers | filter:searchText | paginate: {itemsPerPage: 10, currentPage: p}"  (click)="onSelect(supplier)">
         <td> {{supplier.name}} </td>
         <td> {{supplier.city}} </td>
         <td> {{supplier.reference}} </td>

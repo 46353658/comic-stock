@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SupplierService {
 
-  suppliersUrl = 'http://localhost:3030/suppliers';
+  suppliersUrl = 'http://localhost:3030/suppliers?%24limit=500';
 
   getSuppliersFromUrl() {
     return this.http.get(this.suppliersUrl);

@@ -1,17 +1,18 @@
-<div *ngIf="supplier">
+<div class="edit-supplier" *ngIf="supplier">
   <h2>Edit supplier details</h2>
+  <br>
   <div>
-      <label>name:
+      <label>Name:<br>
         <input [(ngModel)]="supplier.name" placeholder="name"/>
       </label>
   </div>
   <div>
-      <label>city:
+      <label>City:<br>
         <input [(ngModel)]="supplier.city" placeholder="city"/>
       </label>
   </div>
   <div>
-      <label>reference:
+      <label>Reference:<br>
         <input [(ngModel)]="supplier.reference" placeholder="reference"/>
       </label>
   </div>
