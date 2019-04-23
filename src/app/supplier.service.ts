@@ -23,6 +23,15 @@ export class SupplierService {
     return of(SUPPLIERS);
   }
 
+  deleteSupplier (supplier: Supplier): Observable<any> {
+    console.log(`deleteSupplier: ${supplier._id}`);
+
+    return this.http.delete(`${this.suppliersUrl}${supplier._id}`).pipe(
+      tap(_ => console.log(`deleted supplier id=${supplier._id}`)),
+      catchError(this.handleError<any>('deleteSupplier'))
+    );
+  }
+
   updateSupplier (supplier: Supplier): Observable<any> {
     console.log(`supplier._id: ${supplier._id}`);
 

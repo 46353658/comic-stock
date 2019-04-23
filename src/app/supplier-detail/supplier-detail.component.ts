@@ -23,6 +23,11 @@ export class SupplierDetailComponent implements OnInit {
       .subscribe(() => this.goBack());
   }
 
+  delete(): void {
+    this.supplierService.deleteSupplier(this.supplier)
+      .subscribe(() => this.goBack());
+  }
+
   goBack(): void {
     this.location.back();
   }

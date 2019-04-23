@@ -23,6 +23,7 @@
         <th> Name: </th>
         <th> City: </th>
         <th> Reference: </th>
+        <!-- <th> Status: </th> -->
       </tr>
     </thead>
     <tbody>
@@ -30,6 +31,7 @@
         <td> {{supplier.name}} </td>
         <td> {{supplier.city}} </td>
         <td> {{supplier.reference}} </td>
+        <!-- <td> {{supplier.status}} </td> -->
       </tr>
     </tbody>
 </table>
@@ -40,19 +42,19 @@
 </div>
 
 <div class="add-div">
-    <h2>Add supplier</h2>
-    <label>Supplier Name:
-      <input #supplierName>
-    </label>
-    <br>
-    <label>Supplier City:
-      <input #supplierCity>
-    </label>
-    <br>
-    <label>Supplier Reference:
-      <input #supplierReference>
-    </label>
-    <br>
-    <button (click)="addSupplier(supplierName.value, supplierCity.value, supplierReference.value); 
-                     supplierName.value=''; supplierCity.value=''; supplierReference.value=''">Add</button>
-  </div>
+  <h2>Add supplier</h2>
+  <label>Supplier Name:
+    <input #supplierName>
+  </label>
+  <br>
+  <label>Supplier City:
+    <input #supplierCity>
+  </label>
+  <br>
+  <label>Supplier Reference:
+    <input #supplierReference>
+  </label>
+  <br>
+  <button (click)="addSupplier(supplierName.value, supplierCity.value, supplierReference.value); 
+                   supplierName.value=''; supplierCity.value=''; supplierReference.value=''">Add</button>
+</div>
