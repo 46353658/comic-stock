@@ -3,3 +3,14 @@ display: flex;
 align-items: center;
 justify-content: center;
 } */
+
+label {
+    width: 180px;
+    clear: left;
+    text-align: left;
+    padding-right: 10px;
+}
+
+input, label {
+    float: left;
+}

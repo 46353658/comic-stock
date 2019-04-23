@@ -1,21 +1,23 @@
 <div class="edit-supplier" *ngIf="supplier">
   <h2>Edit supplier details</h2>
-  <br>
   <div>
-      <label>Name:<br>
+      <label>Supplier Name:<br>
         <input [(ngModel)]="supplier.name" placeholder="name"/>
       </label>
   </div>
+  <br>
   <div>
-      <label>City:<br>
+      <label>Supplier City:<br>
         <input [(ngModel)]="supplier.city" placeholder="city"/>
       </label>
   </div>
+  <br>
   <div>
-      <label>Reference:<br>
+      <label>Supplier Reference:<br>
         <input [(ngModel)]="supplier.reference" placeholder="reference"/>
       </label>
   </div>
+  <br style="line-height:5;"><br>
   <button (click)="save()">Save</button>
   <button (click)="delete()">Delete</button>
   <button (click)="goBack()">Go back</button>

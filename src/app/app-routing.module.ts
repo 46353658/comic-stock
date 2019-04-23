@@ -6,7 +6,8 @@ import { IssuesComponent } from './issues/issues.component';
 const routes: Routes = [
   { path: 'suppliers', component: SuppliersComponent },
   { path: 'issues', component: IssuesComponent },
-  { path: '', redirectTo: '/issues', pathMatch: 'full'}
+  // { path: '', redirectTo: '/issues', pathMatch: 'full'}
+  { path: '', redirectTo: '/suppliers', pathMatch: 'full' }
 ];
 
 @NgModule({

@@ -41,7 +41,7 @@
   <app-supplier-detail [supplier]="selectedSupplier"></app-supplier-detail>
 </div>
 
-<div class="add-div">
+<div class="add-div" *ngIf="!selectedSupplier">
   <h2>Add supplier</h2>
   <label>Supplier Name:   
     <input #supplierName>
