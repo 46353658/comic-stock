@@ -16,7 +16,7 @@
   <input type="text" placeholder="Search" [(ngModel)]="searchText" />
 </div>
 <br>
-
+<br>
 <table class="table">
     <thead>
       <tr>
@@ -43,7 +43,7 @@
 
 <div class="add-div">
   <h2>Add supplier</h2>
-  <label>Supplier Name:
+  <label>Supplier Name:   
     <input #supplierName>
   </label>
   <br>
@@ -54,7 +54,7 @@
   <label>Supplier Reference:
     <input #supplierReference>
   </label>
-  <br>
+  <br style="line-height:5;"><br>
   <button (click)="addSupplier(supplierName.value, supplierCity.value, supplierReference.value); 
                    supplierName.value=''; supplierCity.value=''; supplierReference.value=''">Add</button>
 </div>
