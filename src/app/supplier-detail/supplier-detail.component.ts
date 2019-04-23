@@ -13,18 +13,13 @@ export class SupplierDetailComponent implements OnInit {
   @Input() supplier: Supplier;
 
   constructor(private supplierService: SupplierService,
-              private location: Location) { }
+    private location: Location) { }
 
   ngOnInit() {
   }
 
   save(): void {
     this.supplierService.updateSupplier(this.supplier) 
-      .subscribe(() => this.goBack());
-  }
-
-  delete(): void {
-    this.supplierService.deleteSupplier(this.supplier)
       .subscribe(() => this.goBack());
   }
 
