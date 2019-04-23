@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Supplier } from '../supplier';
 import { SupplierService } from '../supplier.service';
 import { Observable } from 'rxjs';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-suppliers',
@@ -10,6 +11,8 @@ import { Observable } from 'rxjs';
 })
 export class SuppliersComponent implements OnInit {
 
+  public popOverTitle: string = 'Sure?';
+
   suppliers: Supplier[];
 
   p: number = 1;
@@ -17,6 +20,11 @@ export class SuppliersComponent implements OnInit {
   selectedSupplier: Supplier;
 
   response: any;
+
+  deleteSupplier(supplier: Supplier): void {
+    this.supplierService.deleteSupplier(supplier)
+      .subscribe(() => this.goBack());
+  }
 
   getSuppliersFromUrl(): void {
     this.supplierService.getSuppliersFromUrl()
@@ -27,11 +35,16 @@ export class SuppliersComponent implements OnInit {
       });
   }
 
+  goBack(): void {
+    this.location.back();
+  }
+
   onSelect(supplier: Supplier): void {
     this.selectedSupplier = supplier;
   }
 
-  constructor(private supplierService: SupplierService) { }
+  constructor(private supplierService: SupplierService,
+    private location: Location) { }
 
   ngOnInit() {
     this.getSuppliersFromUrl();

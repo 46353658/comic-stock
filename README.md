@@ -9,6 +9,11 @@ $ docker-build up
 {Angular material installation}
 npm i ng2-search-filter --save
 npm install ngx-pagination --save
+// for delete confirmation pop up
+npm install --save angular-confirmation-popover
+
+#snag
+* close pipe once information has been received (GET)
 
 # ComicStock
 

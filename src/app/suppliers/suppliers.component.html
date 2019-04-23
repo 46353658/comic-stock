@@ -1,16 +1,3 @@
-<!-- <table>
-  <tr>
-    <th> Name: </th>
-    <th> City: </th>
-    <th> Reference: </th>
-  </tr>
-  <tr *ngFor="let supplier of suppliers" (click)="onSelect(supplier)">
-    <td> {{supplier.name}} </td>
-    <td> {{supplier.city}} </td>
-    <td> {{supplier.reference}} </td>
-  </tr>
-</table> -->
-
 <br>
 <div class="row">
   <input type="text" placeholder="Search" [(ngModel)]="searchText" />
@@ -31,6 +18,17 @@
         <td> {{supplier.name}} </td>
         <td> {{supplier.city}} </td>
         <td> {{supplier.reference}} </td>
+        <td> 
+          <button mat-flat-button color="warn"
+                  mwlConfirmationPopover
+                  [popoverTitle]="popoverTitle"
+                  [popoverMessage]="popoverMessage"
+                  placement="left"
+                  (confirm)="deleteSupplier(supplier)"
+                  (cancel)="cancelClicked = true" >
+            Delete
+          </button>
+        </td>
         <!-- <td> {{supplier.status}} </td> -->
       </tr>
     </tbody>
