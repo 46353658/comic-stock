@@ -39,6 +39,16 @@ export class SupplierService {
     );
   }
 
+  // this.supplierService.addSupplier( { addSupplier } as any) 
+  addSupplier(addSupplier: any): Observable<any> {
+
+    console.log(`addSupplier: ${addSupplier}`);
+    return this.http.post(`http://localhost:3030/suppliers`, addSupplier, httpOptions).pipe(
+      tap(_ => console.log(`added supplier`)),
+      catchError(this.handleError<any>('addSupplier'))
+    );
+  }
+
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);

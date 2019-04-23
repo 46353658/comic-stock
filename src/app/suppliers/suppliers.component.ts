@@ -37,4 +37,24 @@ export class SuppliersComponent implements OnInit {
     this.getSuppliersFromUrl();
   }
 
+  addSupplier(supplierName: string, supplierCity: string, supplierReference: string): void {
+    supplierName = supplierName.trim();
+    supplierCity = supplierCity.trim();
+    supplierReference = supplierReference.trim();
+
+    if (!supplierName || !supplierCity || !supplierReference) {
+      return;
+    }
+
+    this.supplierService.addSupplier( {
+      name: supplierName,
+      city: supplierCity,
+      reference: supplierReference
+    } ) 
+      .subscribe(supplier => {
+        this.suppliers.push(supplier);
+      });
+  
+  }
+
 }
