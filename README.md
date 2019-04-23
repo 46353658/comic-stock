@@ -10,7 +10,6 @@ $ docker-build up
 npm i ng2-search-filter --save
 npm install ngx-pagination --save
 
-
 # ComicStock
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
