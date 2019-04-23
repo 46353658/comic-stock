@@ -11,6 +11,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgxPaginationModule } from 'ngx-pagination';
 
+import {MatButtonModule} from '@angular/material/button';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +27,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     HttpClientModule,
     BrowserAnimationsModule,
     Ng2SearchPipeModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
