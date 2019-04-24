@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Issue } from '../issue';
+import { IssueService } from '../issue.service';
 
 @Component({
   selector: 'app-issues',
@@ -7,11 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IssuesComponent implements OnInit {
 
-  title = "New Avengers (2015) ";
+  // title = "New Avengers (2015) ";
 
-  constructor() { }
+  issues: Issue[];
+
+  getIssuesFromUrl(): void {
+    this.issueService.getIssuesFromUrl()
+      .subscribe({
+        next: (issues: any) => {
+          this.issues = issues.data;
+        }
+      });
+  }
+
+  constructor(private issueService: IssueService) { }
 
   ngOnInit() {
+    this.getIssuesFromUrl();
+    console.log(`issues: ${this.issues}`);
   }
 
 }

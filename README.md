@@ -12,6 +12,12 @@ npm install ngx-pagination --save
 // for delete confirmation pop up
 npm install --save angular-confirmation-popover
 
+# JSON
+// convert js object to json:
+    jsObj = JSON.stringify(jsObj)
+// convert json object to js:
+    localJsObj = JSON.parse(jsonObj)
+
 #snag
 * close pipe once information has been received (GET)
 

@@ -1,7 +1,17 @@
 <h2>Issues</h2>
-<div>
-  <!-- <a *ngFor="let issue of issues"></a> -->
-  <div>
-    <h4>{{title}}</h4>
-  </div>
-</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th> Title: </th>
+      <th> Series: </th>
+      <th> Description: </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let issue of issues">
+      <td> {{issue.title}} </td>
+      <td> {{issue.series}} </td>
+      <td> {{issue.description}} </td>
+    </tr>
+  </tbody>
+</table>
