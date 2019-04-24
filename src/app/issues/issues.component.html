@@ -4,14 +4,16 @@
     <tr>
       <th> Title: </th>
       <th> Series: </th>
-      <th> Description: </th>
+      <th> Thumbnail: </th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let issue of issues">
       <td> {{issue.title}} </td>
       <td> {{issue.series}} </td>
-      <td> {{issue.description}} </td>
+      <td> 
+        <img src="{{issue.thumbnail.path}}.{{issue.thumbnail.extension}}" alt="Not found">
+      </td>
     </tr>
   </tbody>
 </table>
