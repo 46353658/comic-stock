@@ -1,0 +1,5 @@
+- Not closing pipe (rest requests)
+- Navigation after action
+- First delete does not immediately update
+- goBack goes back to issues instead of suppliers
+- Looks shit
