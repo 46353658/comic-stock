@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SuppliersComponent } from './suppliers/suppliers.component';
-import { SupplierDetailComponent } from './supplier-detail/supplier-detail.component';
+import { SupplierDetailComponent } from './suppliers/supplier-detail/supplier-detail.component';
 import { HttpClientModule } from '@angular/common/http';
 import { IssuesComponent } from './issues/issues.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';

@@ -34,6 +34,17 @@ h2 {
 .add-supplier-details {
     margin: 0 auto;
     width: 70%;
-    padding-left: 573px;
+    /* padding-left: 573px; */
+    padding-left: 550px;
+}
+
+.add-supplier-details button:hover {
+    background-color: green;
+}
+
+pagination-control {
+    margin: 0 auto;
+    width: 70%;
+    padding-left: 500px;
 }
 
