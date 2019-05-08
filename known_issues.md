@@ -24,3 +24,4 @@ other:
 
     suppliers.component.ts controls whether or not to show 
     supplier detail, how to affect this variable from another .ts file/another solution to bring back "Add supplier"
+    

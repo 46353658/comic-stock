@@ -5,6 +5,17 @@ $ docker-compose up
 ---
 $ docker-build up
 
+
+# to use bootstrap installed via npm update angular.json
+"styles": [
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ],
+
 # other installs needed
 {Angular material installation}
 npm i ng2-search-filter --save
