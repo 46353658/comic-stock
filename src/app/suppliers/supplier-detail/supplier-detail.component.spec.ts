@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { SupplierDetailComponent } from './supplier-detail.component';
 
 describe('SupplierDetailComponent', () => {

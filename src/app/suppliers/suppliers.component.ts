@@ -9,6 +9,7 @@ import { Location } from '@angular/common';
   templateUrl: './suppliers.component.html',
   styleUrls: ['./suppliers.component.css']
 })
+
 export class SuppliersComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.supplierServiceSubscription
@@ -35,9 +36,15 @@ export class SuppliersComponent implements OnInit, OnDestroy {
   constructor(private supplierService: SupplierService,
     private location: Location) { }
 
+  // old  
+  // deleteSupplier(supplier: Supplier): void {
+  //   this.supplierService.deleteSupplier(supplier)
+  //     .subscribe(() => this.goBack());
+  // }
+
   deleteSupplier(supplier: Supplier): void {
-    this.supplierService.deleteSupplier(supplier)
-      .subscribe(() => this.goBack());
+    this.supplierServiceSubscription = this.supplierService.deleteSupplier(supplier)
+      .subscribe(() => this.goBack())
   }
 
   getSuppliersFromUrl(): void {
@@ -49,6 +56,22 @@ export class SuppliersComponent implements OnInit, OnDestroy {
       });
   }
 
+  //old
+  // getSuppliersFromUrl(): void {
+  //   this.supplierService.getSuppliersFromUrl()
+  //     .subscribe({
+  //       next: (suppliers: any) => {
+  //         this.suppliers = suppliers.data;
+  //       }
+  //     });
+  // }
+
+
+
+
+
+
+
   goBack(): void {
     this.location.back();
   }
@@ -56,7 +79,6 @@ export class SuppliersComponent implements OnInit, OnDestroy {
   onSelect(supplier: Supplier): void {
     this.selectedSupplier = supplier;
   }
-
 
   addSupplier(supplierName: string, supplierCity: string, supplierReference: string): void {
     supplierName = supplierName.trim();

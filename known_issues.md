@@ -1,4 +1,5 @@
-- Not closing pipe (rest requests)
+- Not closing pipe (rest requests) (as per suppliers.component.ts) 
+    - question: should I be using a different subscription
 - any
 - Navigation after action 
 - First delete does not immediately update
@@ -12,14 +13,9 @@
 - rename SUPPLIERS to MOCK-SUPPLIERS
 -   // create an array and then destroy all elements
   supplierServiceSubscription: Subscription;
-- use the router to go back (supplier-detail.component.ts)
+- use the router to go back (supplier-detail.component.ts) -> done
+- use environment variables for urls
 -------------
 other:
 - Bring back "Add supplier" after Go back (editing supplier) -> done
-- Bring back "Add supplier" after saving 
--   onSelect(supplier: Supplier): void {
-    this.selectedSupplier = supplier;
-    }
-
-    suppliers.component.ts controls whether or not to show 
-    supplier detail, how to affect this variable from another .ts file/another solution to bring back "Add supplier"
+- Bring back "Add supplier" after saving -> done
