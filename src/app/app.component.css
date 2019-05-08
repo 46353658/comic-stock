@@ -9,4 +9,5 @@ h1 {
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    padding-right: 40px;
 }

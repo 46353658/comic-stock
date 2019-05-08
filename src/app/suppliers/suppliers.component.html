@@ -1,43 +1,17 @@
 <br>
+<h2>Suppliers</h2>
 <div class="row">
-  <input type="text" placeholder="Search" [(ngModel)]="searchText" />
+  <input type="text" placeholder="        Search for a supplier" [(ngModel)]="searchText" />
 </div>
 <br>
 <br>
-<!-- <table class="table">
-    <thead>
-      <tr>
-        <th> Name: </th>
-        <th> City: </th>
-        <th> Reference: </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let supplier of suppliers | filter:searchText | paginate: {itemsPerPage: 10, currentPage: p}"  (click)="onSelect(supplier)">
-        <td> {{supplier.name}} </td>
-        <td> {{supplier.city}} </td>
-        <td> {{supplier.reference}} </td>
-        <td> 
-          <button mat-flat-button color="warn"
-                  mwlConfirmationPopover
-                  [popoverTitle]="popoverTitle"
-                  [popoverMessage]="popoverMessage"
-                  placement="left"
-                  (confirm)="deleteSupplier(supplier)"
-                  (cancel)="cancelClicked = true" >
-            Delete
-          </button>
-        </td>
-      </tr>
-    </tbody>
-</table> -->
 <table class="table">
     <thead>
-      <tr>
+      <!-- <tr> -->
         <th scope="col"> Name: </th>
         <th scope="col"> City: </th>
         <th scope="col"> Reference: </th>
-      </tr>
+      <!-- </tr> -->
     </thead>
     <tbody>
       <tr *ngFor="let supplier of suppliers | filter:searchText | paginate: {itemsPerPage: 10, currentPage: p}"  (click)="onSelect(supplier)">

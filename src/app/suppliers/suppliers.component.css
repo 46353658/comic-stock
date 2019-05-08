@@ -18,6 +18,15 @@ input, label {
     float: left;
 }
 
+h2 {
+    padding-left: 860px;
+}
+
 .row {
-    padding-left: 25px;
+    /* padding-left: 25px; */
+    padding-left: 840px;
+}
+
+.table tr:hover {
+    background-color: darkcyan;
 }
