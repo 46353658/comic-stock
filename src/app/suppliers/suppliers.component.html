@@ -40,19 +40,20 @@
 
 <div class="add-div" *ngIf="!selectedSupplier">
   <h2>Add supplier</h2>
-  <label>Supplier Name:   
-    <input #supplierName>
-  </label>
-  <br>
-  <label>Supplier City:
-    <input #supplierCity>
-  </label>
-  <br>
-  <label>Supplier Reference:
-    <input #supplierReference>
-  </label>
-  <br style="line-height:5;"><br>
-  <button mat-raised-button (click)="addSupplier(supplierName.value, supplierCity.value, supplierReference.value); 
-                   supplierName.value=''; supplierCity.value=''; supplierReference.value=''">Add</button>
-                   
+  <div class="add-supplier-details">
+    <label>Supplier Name:   
+      <input #supplierName>
+    </label>
+    <br>
+    <label>Supplier City:
+      <input #supplierCity>
+    </label>
+    <br>
+    <label>Supplier Reference:
+      <input #supplierReference>
+    </label>
+    <br style="line-height:8;"><br>
+    <button mat-raised-button (click)="addSupplier(supplierName.value, supplierCity.value, supplierReference.value); 
+                    supplierName.value=''; supplierCity.value=''; supplierReference.value=''">Add</button>
+  </div>                 
 </div>
