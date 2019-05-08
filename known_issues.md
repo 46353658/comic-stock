@@ -1,5 +1,11 @@
 - Not closing pipe (rest requests)
+- any
 - Navigation after action
 - First delete does not immediately update
 - goBack goes back to issues instead of suppliers
 - Looks shit
+- service worker
+- on push change detection
+- supplier detail can be within supplier
+- use scss
+- search on the backend

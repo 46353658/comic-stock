@@ -1,4 +1,6 @@
-export class Issue {
+// use interface if you just need to type
+
+export interface Issue {
     title: string;
     series: string;
     description: string;

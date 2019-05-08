@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Supplier } from './supplier';
+// rename to mock-suppliers
 import { SUPPLIERS } from './mock-suppliers';
 import { Observable, of, ObservableInput } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -13,8 +14,10 @@ const httpOptions = {
 })
 export class SupplierService {
 
+  // use an environment variable for this
   suppliersUrl = 'http://localhost:3030/suppliers/';
 
+  // use http.getArgumentList (HttpParams)
   getSuppliersFromUrl() {
     return this.http.get(`${this.suppliersUrl}?%24limit=500`);
   }

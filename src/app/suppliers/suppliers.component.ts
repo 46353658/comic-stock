@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Supplier } from '../supplier';
 import { SupplierService } from '../supplier.service';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { Location } from '@angular/common';
 
 @Component({
@@ -9,7 +9,11 @@ import { Location } from '@angular/common';
   templateUrl: './suppliers.component.html',
   styleUrls: ['./suppliers.component.css']
 })
-export class SuppliersComponent implements OnInit {
+export class SuppliersComponent implements OnInit, OnDestroy {
+  ngOnDestroy(): void {
+    this.supplierServiceSubscription
+      .unsubscribe();
+  }
 
   public popOverTitle: string = 'Sure?';
 
@@ -21,13 +25,23 @@ export class SuppliersComponent implements OnInit {
 
   response: any;
 
+  // create an array and then destroy all elements
+  supplierServiceSubscription: Subscription;
+
+  ngOnInit() {
+    this.getSuppliersFromUrl();
+  }
+
+  constructor(private supplierService: SupplierService,
+    private location: Location) { }
+
   deleteSupplier(supplier: Supplier): void {
     this.supplierService.deleteSupplier(supplier)
       .subscribe(() => this.goBack());
   }
 
   getSuppliersFromUrl(): void {
-    this.supplierService.getSuppliersFromUrl()
+    this.supplierServiceSubscription = this.supplierService.getSuppliersFromUrl()
       .subscribe({
         next: (suppliers: any) => {
           this.suppliers = suppliers.data;
@@ -43,12 +57,6 @@ export class SuppliersComponent implements OnInit {
     this.selectedSupplier = supplier;
   }
 
-  constructor(private supplierService: SupplierService,
-    private location: Location) { }
-
-  ngOnInit() {
-    this.getSuppliersFromUrl();
-  }
 
   addSupplier(supplierName: string, supplierCity: string, supplierReference: string): void {
     supplierName = supplierName.trim();

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { Supplier } from '../supplier';
 import { SupplierService } from '../supplier.service';
 import { Location } from '@angular/common';
@@ -24,7 +24,7 @@ export class SupplierDetailComponent implements OnInit {
   }
 
   goBack(): void {
-    this.location.back();
+    this.location.back(); // just use the router
     // this.location.go('/suppliers');
   }
 
