@@ -19,5 +19,7 @@
   </div>
   <br style="line-height:5;"><br>
   <button mat-raised-button (click)="save()">Save</button>
-  <button mat-raised-button (click)="goBack()">Go back</button>
+  <!-- no longer invoke goBack() as per code-review-1 -->
+  <button mat-raised-button><a routerLink="/suppliers"></a>Go back</button>
+  <!-- <a routerLink="/suppliers">Suppliers</a><br> -->
 </div>
