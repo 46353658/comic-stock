@@ -1,5 +1,4 @@
-// use interface if you just need to type
-
+// Using interface instead of class as per code-review-1
 export interface Issue {
     title: string;
     series: string;
