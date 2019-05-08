@@ -33,7 +33,7 @@ import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
       confirmButtonType: 'danger'
     })
   ],
-  providers: [],
+  providers: [SuppliersComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
