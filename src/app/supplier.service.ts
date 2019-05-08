@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Supplier } from './supplier';
 // rename to mock-suppliers
-import { SUPPLIERS } from './mock-suppliers';
+import { MOCK_SUPPLIERS } from './mock-suppliers';
 import { Observable, of, ObservableInput } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
@@ -23,7 +23,7 @@ export class SupplierService {
   }
 
   getSuppliers(): Observable<Supplier[]> {
-    return of(SUPPLIERS);
+    return of(MOCK_SUPPLIERS);
   }
 
   deleteSupplier (supplier: Supplier): Observable<any> {
