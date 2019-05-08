@@ -34,7 +34,7 @@
 </table>
 <pagination-controls class="text-center" (pageChange)="p = $event"></pagination-controls>
 
-<div *ngIf="selectedSupplier">
+<div class="edit-supplier-details" *ngIf="selectedSupplier">
   <app-supplier-detail [supplier]="selectedSupplier"></app-supplier-detail>
 </div>
 

@@ -1,25 +1,25 @@
 <div class="edit-supplier" *ngIf="supplier">
   <h2>Edit supplier details</h2>
-  <div>
-      <label>Supplier Name:<br>
-        <input [(ngModel)]="supplier.name" placeholder="name"/>
-      </label>
-  </div>
-  <br>
-  <div>
-      <label>Supplier City:<br>
-        <input [(ngModel)]="supplier.city" placeholder="city"/>
-      </label>
-  </div>
-  <br>
-  <div>
-      <label>Supplier Reference:<br>
-        <input [(ngModel)]="supplier.reference" placeholder="reference"/>
-      </label>
-  </div>
-  <br style="line-height:5;"><br>
-  <button mat-raised-button (click)="save()">Save</button>
-  <!-- no longer invoke goBack() as per code-review-1 -->
-  <button mat-raised-button><a routerLink="/suppliers"></a>Go back</button>
-  <!-- <a routerLink="/suppliers">Suppliers</a><br> -->
+    <div>
+        <label>Supplier Name:<br>
+          <input [(ngModel)]="supplier.name" placeholder="name"/>
+        </label>
+    </div>
+    <br>
+    <div>
+        <label>Supplier City:<br>
+          <input [(ngModel)]="supplier.city" placeholder="city"/>
+        </label>
+    </div>
+    <br>
+    <div>
+        <label>Supplier Reference:<br>
+          <input [(ngModel)]="supplier.reference" placeholder="reference"/>
+        </label>
+    </div>
+    <br style="line-height:5;"><br>
+    <button mat-raised-button (click)="save()">Save</button>
+    <!-- no longer invoke goBack() as per code-review-1 -->
+    <button mat-raised-button><a routerLink="/suppliers"></a>Go back</button>
+    <!-- <a routerLink="/suppliers">Suppliers</a><br> -->
 </div>
