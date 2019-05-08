@@ -1,11 +1,11 @@
-table, th, td {
+/* table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
-}
+} */
 
-th {
+/* th {
     text-align: left;
-}
+} */
 
 label {
     width: 180px;
@@ -16,4 +16,8 @@ label {
 
 input, label {
     float: left;
+}
+
+.row {
+    padding-left: 25px;
 }
