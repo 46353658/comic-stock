@@ -8,3 +8,9 @@ label {
 input, label {
     float: left;
 }
+
+h2 {
+    font-weight: bold;
+    color: teal;
+    padding-right: 200px;
+}

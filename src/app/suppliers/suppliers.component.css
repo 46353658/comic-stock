@@ -20,6 +20,8 @@ input, label {
 
 h2 {
     padding-left: 860px;
+    font-weight: bold;
+    color: teal;
 }
 
 .row {
