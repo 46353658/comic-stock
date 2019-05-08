@@ -1,5 +1,5 @@
 <br>
-<h2>Suppliers</h2>
+<h2 class="supplier-heading">Suppliers</h2>
 <div class="row">
   <input type="text" placeholder="        Search for a supplier" [(ngModel)]="searchText" />
 </div>
@@ -24,8 +24,8 @@
                   [popoverTitle]="popoverTitle"
                   [popoverMessage]="popoverMessage"
                   placement="left"
-                  (confirm)="deleteSupplier(supplier)"
-                  (cancel)="cancelClicked = true" >
+                  (confirm)="deleteSupplier(supplier)" 
+                  (cancel)="cancelClicked = true">
             Delete
           </button>
         </td>
@@ -39,7 +39,7 @@
 </div>
 
 <div class="add-div" *ngIf="!selectedSupplier">
-  <h2>Add supplier</h2>
+  <h2 class="add-supplier-heading">Add supplier</h2>
   <div class="add-supplier-details">
     <label>Supplier Name:   
       <input #supplierName>
