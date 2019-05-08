@@ -23,7 +23,8 @@ export class SupplierDetailComponent implements OnInit {
 
   save(): void {
     this.supplierService.updateSupplier(this.supplier) 
-      .subscribe(() => this.goBack());
+      .subscribe(() => this.updateSuppliersVariable());
+    // window.location.reload();
   }
 
   goBack(): void {
