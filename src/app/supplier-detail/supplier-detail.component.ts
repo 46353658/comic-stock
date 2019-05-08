@@ -24,7 +24,8 @@ export class SupplierDetailComponent implements OnInit {
   }
 
   goBack(): void {
-    this.location.back(); // just use the router
+    // this.location.back(); // just use the router
+    this.location.go('/suppliers');
     // this.location.go('/suppliers');
   }
 
