@@ -11,6 +11,7 @@ import { Location } from '@angular/common';
 })
 
 export class SuppliersComponent implements OnInit, OnDestroy {
+
   ngOnDestroy(): void {
     this.supplierServiceSubscription
       .unsubscribe();
@@ -66,12 +67,6 @@ export class SuppliersComponent implements OnInit, OnDestroy {
   //     });
   // }
 
-
-
-
-
-
-
   goBack(): void {
     this.location.back();
   }
@@ -81,6 +76,7 @@ export class SuppliersComponent implements OnInit, OnDestroy {
   }
 
   addSupplier(supplierName: string, supplierCity: string, supplierReference: string): void {
+    
     supplierName = supplierName.trim();
     supplierCity = supplierCity.trim();
     supplierReference = supplierReference.trim();
@@ -89,7 +85,7 @@ export class SuppliersComponent implements OnInit, OnDestroy {
       return;
     }
 
-    this.supplierService.addSupplier( {
+    this.supplierServiceSubscription = this.supplierService.addSupplier( {
       name: supplierName,
       city: supplierCity,
       reference: supplierReference
@@ -97,7 +93,16 @@ export class SuppliersComponent implements OnInit, OnDestroy {
       .subscribe(supplier => {
         this.suppliers.push(supplier);
       });
-  
-  }
 
+  // old
+  // this.supplierService.addSupplier( {
+  //   name: supplierName,
+  //   city: supplierCity,
+  //   reference: supplierReference
+  // } ) 
+  //   .subscribe(supplier => {
+  //     this.suppliers.push(supplier);
+  //   });
+        
+  }
 }

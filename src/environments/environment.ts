@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  issuesUrl: 'http://localhost:3030/issues/',
+  suppliersUrl: 'http://localhost:3030/suppliers/',
+  addSupplierUrl: 'http://localhost:3030/suppliers',
+  limit500: '?%24limit=500'
 };
 
 /*

@@ -5,6 +5,7 @@ import { MOCK_SUPPLIERS } from './mock-suppliers';
 import { Observable, of, ObservableInput } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
+import { environment } from './../environments/environment';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json'})
@@ -14,12 +15,13 @@ const httpOptions = {
 })
 export class SupplierService {
 
-  // use an environment variable for this
-  suppliersUrl = 'http://localhost:3030/suppliers/';
+  constructor(private http: HttpClient) { }
+  // // use an environment variable for this
+  // suppliersUrl = 'http://localhost:3030/suppliers/';
 
   // use http.getArgumentList (HttpParams)
   getSuppliersFromUrl() {
-    return this.http.get(`${this.suppliersUrl}?%24limit=500`);
+    return this.http.get(`${environment.suppliersUrl}${environment.limit500}`);
   }
 
   getSuppliers(): Observable<Supplier[]> {
@@ -29,7 +31,7 @@ export class SupplierService {
   deleteSupplier (supplier: Supplier): Observable<any> {
     console.log(`deleteSupplier: ${supplier._id}`);
 
-    return this.http.delete(`${this.suppliersUrl}${supplier._id}`).pipe(
+    return this.http.delete(`${environment.suppliersUrl}${supplier._id}`).pipe(
       tap(_ => console.log(`deleted supplier id=${supplier._id}`)),
       catchError(this.handleError<any>('deleteSupplier'))
     );
@@ -43,7 +45,7 @@ export class SupplierService {
       reference: supplier.reference
     }
 
-    return this.http.put(`${this.suppliersUrl}${supplier._id}`, updateObject, httpOptions).pipe(
+    return this.http.put(`${environment.suppliersUrl}${supplier._id}`, updateObject, httpOptions).pipe(
       tap(_ => console.log(`updated supplier id=${supplier._id}`)),
       catchError(this.handleError<any>('updateSupplier'))
     );
@@ -51,7 +53,7 @@ export class SupplierService {
 
   addSupplier(addSupplier: any): Observable<any> {
 
-    return this.http.post(`http://localhost:3030/suppliers`, addSupplier, httpOptions).pipe(
+    return this.http.post(`${environment.addSupplierUrl}`, addSupplier, httpOptions).pipe(
       tap(_ => console.log(`added supplier`)),
       catchError(this.handleError<any>('addSupplier'))
     );
@@ -64,6 +66,5 @@ export class SupplierService {
       return of(result as T);
     }
   }
-
-  constructor(private http: HttpClient) { }
+  
 }

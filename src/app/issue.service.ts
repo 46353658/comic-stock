@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from './../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class IssueService {
 
-  issuesUrl = 'http://localhost:3030/issues/'
-  
   getIssuesFromUrl() {
-    return this.http.get(`${this.issuesUrl}?%24limit=500`);
+    return this.http.get(`${environment.issuesUrl}${environment.limit500}`);
   }
 
   constructor(private http: HttpClient) { }
