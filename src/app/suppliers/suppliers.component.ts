@@ -1,8 +1,10 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { Supplier } from '../supplier';
 import { SupplierService } from '../supplier.service';
 import { Observable, Subscription } from 'rxjs';
 import { Location } from '@angular/common';
+
+// changeDetection: ChangeDetectionStrategy.OnPush
 
 @Component({
   selector: 'app-suppliers',

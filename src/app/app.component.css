@@ -6,12 +6,16 @@ nav {
 
 .jumbotron {
     /* background: url(https://cdn-images-1.medium.com/max/2560/1*6s0hRVLM6TUwDgM4b98_8w.jpeg) 160px; */
-    background: url(https://cdn-images-1.medium.com/max/2560/1*6s0hRVLM6TUwDgM4b98_8w.jpeg) 0px;
+    /* background: url(https://cdn-images-1.medium.com/max/2560/1*6s0hRVLM6TUwDgM4b98_8w.jpeg) 0px; */
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(https://cdn-images-1.medium.com/max/2560/1*6s0hRVLM6TUwDgM4b98_8w.jpeg) 0px;
+    /* background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://cdn-images-1.medium.com/max/2560/1*6s0hRVLM6TUwDgM4b98_8w.jpeg"); */
     background-repeat: no-repeat;
     background-color:  black;
     opacity: 0.5;
     background-size: cover;
 }
+
+/* .jumbotron-fluid */
 
 h1 {
     display: flex;
@@ -19,6 +23,10 @@ h1 {
     justify-content: center;
     text-align: center;
     font-weight: bolder;
-    color: whitesmoke;
-    background-color:black;    
+    color: mintcream;
+    /* background-color:black;     */
+}
+
+.jumbo_text {
+    color: white;
 }
