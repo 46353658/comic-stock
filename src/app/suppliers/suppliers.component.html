@@ -7,11 +7,9 @@
 <br>
 <table class="table">
     <thead>
-      <!-- <tr> -->
         <th scope="col"> Name: </th>
         <th scope="col"> City: </th>
         <th scope="col"> Reference: </th>
-      <!-- </tr> -->
     </thead>
     <tbody>
       <tr *ngFor="let supplier of suppliers | filter:searchText | paginate: {itemsPerPage: 10, currentPage: p}"  (click)="onSelect(supplier)">

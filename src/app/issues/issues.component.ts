@@ -9,8 +9,6 @@ import { IssueService } from '../issue.service';
 })
 export class IssuesComponent implements OnInit {
 
-  // title = "New Avengers (2015) ";
-
   issues: Issue[];
 
   getIssuesFromUrl(): void {

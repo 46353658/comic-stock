@@ -10,7 +10,7 @@
 - supplier detail can be within supplier -> done
 - use scss
 - search on the backend 
-- rename SUPPLIERS to MOCK-SUPPLIERS
+- rename SUPPLIERS to MOCK-SUPPLIERS -> done
 -   // create an array and then destroy all elements
   supplierServiceSubscription: Subscription;
 - use the router to go back (supplier-detail.component.ts) -> done
