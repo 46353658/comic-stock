@@ -3,3 +3,10 @@ h2 {
     font-weight: bold;
     color: teal;
 }
+
+img {
+    /* size: 50px 50px; */
+    height: 220px;
+    
+    width: 60%;
+}
