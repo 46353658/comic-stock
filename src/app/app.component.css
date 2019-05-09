@@ -4,33 +4,21 @@ nav {
     width: 200px;
 }
 
+.jumbotron {
+    /* background: url(https://cdn-images-1.medium.com/max/2560/1*6s0hRVLM6TUwDgM4b98_8w.jpeg) 160px; */
+    background: url(https://cdn-images-1.medium.com/max/2560/1*6s0hRVLM6TUwDgM4b98_8w.jpeg) 0px;
+    background-repeat: no-repeat;
+    background-color:  black;
+    opacity: 0.5;
+    background-size: cover;
+}
+
 h1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    padding-right: 40px;
-    /* font-weight: bold; */
-    font-weight: bolder; 
-    color: #a32929;
-    background-color: rgba(238, 238, 238, 0.81);
-    background-position: 50% 50%;
-
-    /* font-size: xx-large; */
-    /* text-shadow: 0px 1px, 1px 0px, 1px 1px; */
-    /* letter-spacing: -1px; 
-    line-height: 1; 
-    text-align: center; */
-    
-}
-
-.jumbotron {
-    /* background: url(https://www.quirkbooks.com/sites/default/files/styles/blog_detail_featured_image/public/Quirk%20Comics%20Crossover%201.jpg?itok=9WzE4faM) 100% 100%; */
-    background: url(https://cdn-images-1.medium.com/max/2560/1*6s0hRVLM6TUwDgM4b98_8w.jpeg) 160px;
-    background-repeat: no-repeat;
-    /* opacity: 0.5; */
-    /* max-width: 100%;
-    max-height: 100%;
-    width: 3840px;
-    position: relative; */
+    font-weight: bolder;
+    color: whitesmoke;
+    background-color:black;    
 }

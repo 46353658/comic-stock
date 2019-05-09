@@ -19,20 +19,14 @@ input, label {
 }
 
 .supplier-heading {
-    padding-left: 860px;
+    /* padding-left: 860px; */
     font-weight: bold;
     color: teal;
 }
 
 .add-supplier-heading {
-    padding-left: 838px;
     font-weight: bold;
     color: teal;
-}
-
-.row {
-    /* padding-left: 25px; */
-    padding-left: 840px;
 }
 
 .table tr:hover {
@@ -40,10 +34,10 @@ input, label {
 }
 
 .add-supplier-details {
-    margin: 0 auto;
+    /* margin: 0 auto; */
     width: 70%;
     /* padding-left: 573px; */
-    padding-left: 550px;
+    /* padding-left: 550px; */
 }
 
 .add-supplier-details button:hover {
@@ -53,7 +47,7 @@ input, label {
 .edit-supplier-details {
     margin: 0 auto;
     width: 70%;
-    padding-left: 550px;
+    /* padding-left: 550px; */
 }
 
 /* pagination-control {
