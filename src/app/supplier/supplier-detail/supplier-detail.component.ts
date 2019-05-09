@@ -2,7 +2,7 @@ import { Component, OnInit, Input, OnDestroy, ChangeDetectionStrategy } from '@a
 import { Supplier } from '../supplier';
 import { SupplierService } from '../supplier.service';
 import { Location } from '@angular/common';
-import { SuppliersComponent } from '../suppliers/suppliers.component';
+import { ActivatedRoute } from '@angular/router';
 // changeDetection: ChangeDetectionStrategy.OnPush
 
 @Component({
@@ -12,19 +12,26 @@ import { SuppliersComponent } from '../suppliers/suppliers.component';
 })
 export class SupplierDetailComponent implements OnInit {
 
-  @Input() supplier: Supplier;
+  supplier: Supplier;
 
   constructor(
     private supplierService: SupplierService,
-    private location: Location,
-    private suppliersComponent: SuppliersComponent) { }
+    private location: Location, 
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.params.subscribe(params => {
+      console.log(params);
+      console.log(`params.id: ${params.id}`);
+    });
+
+
+
   }
 
   save(): void {
-    this.supplierService.updateSupplier(this.supplier) 
-      .subscribe(() => this.updateSuppliersVariable());
+    // this.supplierService.updateSupplier(this.supplier) 
+    //   .subscribe(() => this.updateSuppliersVariable());
     // window.location.reload();
   }
 
@@ -33,7 +40,6 @@ export class SupplierDetailComponent implements OnInit {
   }
 
   updateSuppliersVariable() : void {
-    this.suppliersComponent.selectedSupplier = null;
   }
 
 }

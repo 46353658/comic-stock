@@ -8,8 +8,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { MatButtonModule } from '@angular/material/button';
 import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-
+import { HttpClientModule } from '@angular/common/http';
+// import { HttpModule } from '@angular/common/http';
+// import { HttpModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,8 +26,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ConfirmationPopoverModule.forRoot({
       confirmButtonType: 'danger'
     }),
-    BrowserAnimationsModule
-
+    BrowserAnimationsModule,
+    HttpClientModule
+    // HttpModule
   ]
 })
 export class SupplierModule { }

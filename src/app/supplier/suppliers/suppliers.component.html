@@ -12,7 +12,10 @@
         <th scope="col"> Reference: </th>
     </thead>
     <tbody>
-      <tr *ngFor="let supplier of suppliers | filter:searchText | paginate: {itemsPerPage: 10, currentPage: p}"  (click)="onSelect(supplier)">
+      <tr *ngFor="let supplier of suppliers | 
+                  filter:searchText | 
+                  paginate: {itemsPerPage: 10, currentPage: p}"  
+                  (click)="onSelect(supplier)">
         <td> {{supplier.name}} </td>
         <td> {{supplier.city}} </td>
         <td> {{supplier.reference}} </td>
@@ -32,9 +35,9 @@
 </table>
 <pagination-controls class="text-center" (pageChange)="p = $event"></pagination-controls>
 
-<div class="edit-supplier-details" *ngIf="selectedSupplier">
+<!-- <div class="edit-supplier-details" *ngIf="selectedSupplier">
   <app-supplier-detail [supplier]="selectedSupplier"></app-supplier-detail>
-</div>
+</div> -->
 
 <div class="add-div" *ngIf="!selectedSupplier">
   <h2 class="add-supplier-heading">Add supplier</h2>

@@ -3,6 +3,7 @@ import { Supplier } from '../supplier';
 import { SupplierService } from '../supplier.service';
 import { Observable, Subscription } from 'rxjs';
 import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 // changeDetection: ChangeDetectionStrategy.OnPush
 
@@ -13,6 +14,15 @@ import { Location } from '@angular/common';
 })
 
 export class SuppliersComponent implements OnInit, OnDestroy {
+
+  ngOnInit() {
+    this.getSuppliersFromUrl();
+  }
+
+  constructor(
+    private supplierService: SupplierService,
+    private location: Location,
+    private router: Router) { }
 
   ngOnDestroy(): void {
     this.supplierServiceSubscription
@@ -32,12 +42,6 @@ export class SuppliersComponent implements OnInit, OnDestroy {
   // create an array and then destroy all elements
   supplierServiceSubscription: Subscription;
 
-  ngOnInit() {
-    this.getSuppliersFromUrl();
-  }
-
-  constructor(private supplierService: SupplierService,
-    private location: Location) { }
 
   // old  
   // deleteSupplier(supplier: Supplier): void {
@@ -74,7 +78,12 @@ export class SuppliersComponent implements OnInit, OnDestroy {
   }
 
   onSelect(supplier: Supplier): void {
-    this.selectedSupplier = supplier;
+    console.log(`supplier._id: ${supplier._id}`);
+    // this.router.navigate([`/issues`]);
+    this.router.navigate([`/supplier-detail/${supplier._id}`]);
+    
+    // this.router.navigate([`/supplier-detail/1`]);
+    // this.selectedSupplier = supplier;
   }
 
   addSupplier(supplierName: string, supplierCity: string, supplierReference: string): void {

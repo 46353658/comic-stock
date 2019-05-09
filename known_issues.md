@@ -33,3 +33,5 @@ in progress:
 
     * use the router to route from "/suppliers"
       to "suppliers/{id}/edit" which will then fetch the individual element to edit
+
+* use the id retrieved from url and do a get within supplier-detail.component.ts
