@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Supplier } from './supplier';
 // rename to mock-suppliers
-import { MOCK_SUPPLIERS } from './mock-suppliers';
+import { MOCK_SUPPLIERS } from './suppliers/mock-suppliers';
 import { Observable, of, ObservableInput } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
-import { environment } from './../environments/environment';
+import { environment } from '../../environments/environment';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json'})

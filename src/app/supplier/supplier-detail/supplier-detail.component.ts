@@ -1,8 +1,8 @@
 import { Component, OnInit, Input, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
-import { Supplier } from '../../supplier';
-import { SupplierService } from '../../supplier.service';
+import { Supplier } from '../supplier';
+import { SupplierService } from '../supplier.service';
 import { Location } from '@angular/common';
-import { SuppliersComponent } from '../suppliers.component';
+import { SuppliersComponent } from '../suppliers/suppliers.component';
 // changeDetection: ChangeDetectionStrategy.OnPush
 
 @Component({

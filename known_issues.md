@@ -24,7 +24,7 @@ in progress:
 
 - Looks shit
 
-----------------------------------------------------
+--------------------------other--------------------------
 
 * create supplier module 
     containing supplier components

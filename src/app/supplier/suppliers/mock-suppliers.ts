@@ -1,4 +1,4 @@
-import { Supplier } from './supplier';
+import { Supplier } from '../supplier';
 
 export const MOCK_SUPPLIERS: Supplier[] = [
     { _id: "1kqLWNNIWJVK42oN", name: "Unerazz", city: "Virginia Beach", reference: "R9F3R5XWZ1R56KI", status: "Active" },
