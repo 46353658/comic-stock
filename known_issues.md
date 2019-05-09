@@ -23,3 +23,13 @@ done:
 in progress:
 
 - Looks shit
+
+----------------------------------------------------
+
+* create supplier module 
+    containing supplier components
+
+    use provider initially
+
+    * use the router to route from "/suppliers"
+      to "suppliers/{id}/edit" which will then fetch the individual element to edit
