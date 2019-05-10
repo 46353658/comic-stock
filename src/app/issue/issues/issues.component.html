@@ -1,4 +1,7 @@
 <h2>Issues</h2>
+<div class="row">
+  <input type="text" placeholder="        Search for an issue" [(ngModel)]="searchText" />
+</div>
 <table class="table">
   <thead>
     <tr>
@@ -8,7 +11,9 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let issue of issues">
+    <tr *ngFor="let issue of issues |
+                filter:searchText |
+                paginate: {itemsPerPage: 10, currentPage: p}">
       <td> {{issue.title}} </td>
       <td> {{issue.series}} </td>
       <td> 
@@ -17,3 +22,4 @@
     </tr>
   </tbody>
 </table>
+<pagination-controls class="text-center" (pageChange)="p = $event"></pagination-controls>
