@@ -6,20 +6,21 @@ import { AppComponent } from './app.component';
 // import { SuppliersComponent } from './suppliers/suppliers.component';
 // import { SupplierDetailComponent } from './supplier/supplier-detail/supplier-detail.component';
 import { HttpClientModule } from '@angular/common/http';
-import { IssuesComponent } from './issue/issues/issues.component';
+// import { IssuesComponent } from './issue/issues/issues.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { MatButtonModule } from '@angular/material/button';
 // import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 import { SupplierModule } from './supplier/supplier.module';
+import { IssueModule } from './issue/issue.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
     // SuppliersComponent,
     // SupplierDetailComponent,
-    IssuesComponent
+    // IssuesComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +34,8 @@ import { SupplierModule } from './supplier/supplier.module';
     // ConfirmationPopoverModule.forRoot({
     //   confirmButtonType: 'danger'
     // }),
-    SupplierModule
+    SupplierModule,
+    IssueModule
   ],
   // providers: [SuppliersComponent],
   providers:[],
