@@ -18,6 +18,7 @@ export class SupplierDetailComponent implements OnInit, OnDestroy {
   selectedSupplierId: String;
   getSupplierDetailSubscription: Subscription;
   saveSupplierDetailSubscription: Subscription;
+  deleteSupplierSubscription: Subscription;
 
   constructor(
     private supplierService: SupplierService,
@@ -52,6 +53,11 @@ export class SupplierDetailComponent implements OnInit, OnDestroy {
 
   save(): void { 
     this.saveSupplierDetailSubscription = this.supplierService.updateSupplier(this.supplier)
+      .subscribe(() => this.goBack());
+  }
+
+  deleteSupplier(): void {
+    this.deleteSupplierSubscription = this.supplierService.deleteSupplier(this.supplier)
       .subscribe(() => this.goBack());
   }
 

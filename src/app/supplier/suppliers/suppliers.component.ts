@@ -44,7 +44,7 @@ export class SuppliersComponent implements OnInit, OnDestroy {
 
   deleteSupplier(supplier: Supplier): void {
     this.supplierServiceSubscription = this.supplierService.deleteSupplier(supplier)
-      .subscribe(() => this.goBack())
+      .subscribe(() => this.goBack());
   }
 
   getSuppliersFromUrl(): void {
