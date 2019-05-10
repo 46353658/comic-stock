@@ -1,8 +1,8 @@
-nav {
+/* nav {
     margin:0 auto;
     display:block;
     width: 200px;
-}
+} */
 
 .jumbotron {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(https://cdn-images-1.medium.com/max/2560/1*6s0hRVLM6TUwDgM4b98_8w.jpeg) 0px;
@@ -23,4 +23,16 @@ h1 {
 
 .jumbo_text {
     color: white;
+}
+
+.container-1 {
+    display: flex;
+}
+
+.button-1 {
+    flex:1;
+}
+
+.button-2 {
+    flex:1;
 }
