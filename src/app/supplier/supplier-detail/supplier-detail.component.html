@@ -19,7 +19,16 @@
   </div>
   <br style="line-height:8;"><br>
   <button mat-raised-button (click)="save()">Save changes</button>
-  <button mat-raised-button (click)="deleteSupplier()">Delete supplier</button><br><br>
+  <!-- <button mat-raised-button (click)="deleteSupplier()">Delete supplier</button><br><br> -->
+  <button mat-flat-button color="warn"
+                  mwlConfirmationPopover
+                  [popoverTitle]="popoverTitle"
+                  [popoverMessage]="popoverMessage"
+                  placement="right"
+                  (confirm)="deleteSupplier()" 
+                  (cancel)="cancelClicked = true">
+            Delete supplier
+          </button><br><br>
   <button mat-raised-button routerLink="/suppliers" (click)="goBack()">Go back</button>
   
 </div>
