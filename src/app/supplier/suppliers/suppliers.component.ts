@@ -15,33 +15,27 @@ import { Router } from '@angular/router';
 
 export class SuppliersComponent implements OnInit, OnDestroy {
 
-  ngOnInit() {
-    this.getSuppliersFromUrl();
-  }
+  public popOverTitle: string = 'Sure?';
+  suppliers: Supplier[];
+  p: number = 1;
+  selectedSupplier: Supplier;
+  response: any;
+  // create an array and then destroy all elements
+  supplierServiceSubscription: Subscription;
 
   constructor(
     private supplierService: SupplierService,
     private location: Location,
     private router: Router) { }
 
+  ngOnInit() {
+    this.getSuppliersFromUrl();
+  }
+  
   ngOnDestroy(): void {
     this.supplierServiceSubscription
       .unsubscribe();
   }
-
-  public popOverTitle: string = 'Sure?';
-
-  suppliers: Supplier[];
-
-  p: number = 1;
-
-  selectedSupplier: Supplier;
-
-  response: any;
-
-  // create an array and then destroy all elements
-  supplierServiceSubscription: Subscription;
-
 
   // old  
   // deleteSupplier(supplier: Supplier): void {
@@ -78,10 +72,9 @@ export class SuppliersComponent implements OnInit, OnDestroy {
   }
 
   onSelect(supplier: Supplier): void {
-    console.log(`supplier._id: ${supplier._id}`);
+    // console.log(`supplier._id: ${supplier._id}`);
     // this.router.navigate([`/issues`]);
-    this.router.navigate([`/supplier-detail/${supplier._id}`]);
-    
+    this.router.navigate([`/supplier-detail/${supplier._id}`]);    
     // this.router.navigate([`/supplier-detail/1`]);
     // this.selectedSupplier = supplier;
   }

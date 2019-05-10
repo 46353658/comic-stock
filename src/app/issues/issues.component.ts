@@ -24,7 +24,7 @@ export class IssuesComponent implements OnInit {
 
   ngOnInit() {
     this.getIssuesFromUrl();
-    console.log(`issues: ${this.issues}`);
+    // console.log(`issues: ${this.issues}`);
   }
 
 }

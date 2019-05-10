@@ -24,6 +24,11 @@ export class SupplierService {
     return this.http.get(`${environment.suppliersUrl}${environment.limit500}`);
   }
 
+  getSupplierFromUrl(supplierId: String) {
+    console.log("in supplier service " + supplierId);
+    return this.http.get(`${environment.suppliersUrl}${supplierId}`);
+  }
+
   getSuppliers(): Observable<Supplier[]> {
     return of(MOCK_SUPPLIERS);
   }

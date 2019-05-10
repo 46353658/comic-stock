@@ -3,6 +3,8 @@ import { Supplier } from '../supplier';
 import { SupplierService } from '../supplier.service';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { PARAMETERS } from '@angular/core/src/util/decorators';
+import { Subscription } from 'rxjs';
 // changeDetection: ChangeDetectionStrategy.OnPush
 
 @Component({
@@ -10,9 +12,11 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './supplier-detail.component.html',
   styleUrls: ['./supplier-detail.component.css']
 })
-export class SupplierDetailComponent implements OnInit {
+export class SupplierDetailComponent implements OnInit, OnDestroy {
 
   supplier: Supplier;
+  selectedSupplierId: String;
+  getSupplierDetailSubscription: Subscription;
 
   constructor(
     private supplierService: SupplierService,
@@ -21,12 +25,39 @@ export class SupplierDetailComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      console.log(params);
-      console.log(`params.id: ${params.id}`);
+      // console.log(params);
+      // console.log(`params.id: ${params.id}`);
+      this.selectedSupplierId = params.id;
     });
 
+    if (this.selectedSupplierId) {
+      this.getSupplierFromUrl();  
+    }
+  }
 
+  ngOnDestroy() : void {
+    this.getSupplierDetailSubscription
+      .unsubscribe();
+  }
 
+  getSupplierFromUrl(): void {
+    console.log(`... ${this.selectedSupplierId}`);
+    this.getSupplierDetailSubscription = 
+        this.supplierService.getSupplierFromUrl(this.selectedSupplierId)
+          .subscribe((supplier: Supplier) => {
+            console.log(`supplier.data: ${JSON.stringify(supplier)}`);
+            this.supplier = supplier;
+            console.log(`this.supplier: ${this.supplier.reference}`);
+          });
+            
+    // this.getSupplierDetailSubscription = 
+    //   this.supplierService.getSupplierFromUrl(this.selectedSupplierId)
+    //         .subscribe({
+    //           next: (supplier: any) => {
+    //             this.supplier = supplier.data;
+    //             console.log(`in subscription ${this.supplier.name}`);
+    //           }
+    //         });  
   }
 
   save(): void {
