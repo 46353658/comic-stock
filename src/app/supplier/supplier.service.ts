@@ -25,7 +25,6 @@ export class SupplierService {
   }
 
   getSupplierFromUrl(supplierId: String) {
-    console.log("in supplier service " + supplierId);
     return this.http.get(`${environment.suppliersUrl}${supplierId}`);
   }
 

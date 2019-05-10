@@ -4,7 +4,6 @@ import { SupplierService } from '../supplier.service';
 import { Observable, Subscription } from 'rxjs';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
-
 // changeDetection: ChangeDetectionStrategy.OnPush
 
 @Component({
@@ -72,15 +71,10 @@ export class SuppliersComponent implements OnInit, OnDestroy {
   }
 
   onSelect(supplier: Supplier): void {
-    // console.log(`supplier._id: ${supplier._id}`);
-    // this.router.navigate([`/issues`]);
     this.router.navigate([`/supplier-detail/${supplier._id}`]);    
-    // this.router.navigate([`/supplier-detail/1`]);
-    // this.selectedSupplier = supplier;
   }
 
   addSupplier(supplierName: string, supplierCity: string, supplierReference: string): void {
-    
     supplierName = supplierName.trim();
     supplierCity = supplierCity.trim();
     supplierReference = supplierReference.trim();

@@ -25,8 +25,6 @@ export class SupplierDetailComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      // console.log(params);
-      // console.log(`params.id: ${params.id}`);
       this.selectedSupplierId = params.id;
     });
 
@@ -41,36 +39,18 @@ export class SupplierDetailComponent implements OnInit, OnDestroy {
   }
 
   getSupplierFromUrl(): void {
-    console.log(`... ${this.selectedSupplierId}`);
     this.getSupplierDetailSubscription = 
         this.supplierService.getSupplierFromUrl(this.selectedSupplierId)
           .subscribe((supplier: Supplier) => {
-            console.log(`supplier.data: ${JSON.stringify(supplier)}`);
             this.supplier = supplier;
-            console.log(`this.supplier: ${this.supplier.reference}`);
-          });
-            
-    // this.getSupplierDetailSubscription = 
-    //   this.supplierService.getSupplierFromUrl(this.selectedSupplierId)
-    //         .subscribe({
-    //           next: (supplier: any) => {
-    //             this.supplier = supplier.data;
-    //             console.log(`in subscription ${this.supplier.name}`);
-    //           }
-    //         });  
+          });  
   }
 
-  save(): void {
-    // this.supplierService.updateSupplier(this.supplier) 
-    //   .subscribe(() => this.updateSuppliersVariable());
-    // window.location.reload();
-  }
+  save(): void { }
 
   goBack(): void {
-    this.location.go('/suppliers');
+    this.location.back();
   }
 
-  updateSuppliersVariable() : void {
-  }
-
+  updateSuppliersVariable(): void {  }
 }
