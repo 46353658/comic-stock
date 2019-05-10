@@ -2,7 +2,7 @@ import { Component, OnInit, Input, OnDestroy, ChangeDetectionStrategy } from '@a
 import { Supplier } from '../supplier';
 import { SupplierService } from '../supplier.service';
 import { Location } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PARAMETERS } from '@angular/core/src/util/decorators';
 import { Subscription } from 'rxjs';
 // changeDetection: ChangeDetectionStrategy.OnPush
@@ -17,11 +17,13 @@ export class SupplierDetailComponent implements OnInit, OnDestroy {
   supplier: Supplier;
   selectedSupplierId: String;
   getSupplierDetailSubscription: Subscription;
+  saveSupplierDetailSubscription: Subscription;
 
   constructor(
     private supplierService: SupplierService,
     private location: Location, 
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -36,6 +38,8 @@ export class SupplierDetailComponent implements OnInit, OnDestroy {
   ngOnDestroy() : void {
     this.getSupplierDetailSubscription
       .unsubscribe();
+    // this.saveSupplierDetailSubscription
+    //   .unsubscribe();
   }
 
   getSupplierFromUrl(): void {
@@ -46,10 +50,13 @@ export class SupplierDetailComponent implements OnInit, OnDestroy {
           });  
   }
 
-  save(): void { }
+  save(): void { 
+    this.saveSupplierDetailSubscription = this.supplierService.updateSupplier(this.supplier)
+      .subscribe(() => this.goBack());
+  }
 
   goBack(): void {
-    this.location.back();
+    this.router.navigate([`/suppliers`]);
   }
 
   updateSuppliersVariable(): void {  }

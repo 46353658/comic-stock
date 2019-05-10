@@ -9,6 +9,10 @@
 -   // create an array and then destroy all elements
   supplierServiceSubscription: Subscription;
 - use http.getArgumentList (HttpParams) for limit=500 (or whatever)
+- if supplier.detail.component.ts ngOnDestroy unsubcribes from 
+  this.saveSupplierDetailSubscription, get this error:
+  core.js:15724 ERROR Error: Uncaught (in promise): TypeError: Cannot read property 'unsubscribe' of undefined
+  when going back to suppliers from edit-supplier 
 
 done:
 
@@ -19,19 +23,15 @@ done:
 - supplier detail can be within supplier
 - goBack goes back to issues instead of suppliers
 - use environment variables for urls
+- use the id retrieved from url and do a get within supplier-detail.component.ts
 
 in progress:
 
 - Looks shit
-
---------------------------other--------------------------
-
-* create supplier module 
+- create supplier module 
     containing supplier components
-
     use provider initially
-
-    * use the router to route from "/suppliers"
+    - use the router to route from "/suppliers"
       to "suppliers/{id}/edit" which will then fetch the individual element to edit
 
-* use the id retrieved from url and do a get within supplier-detail.component.ts
+
