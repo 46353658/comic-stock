@@ -1,4 +1,6 @@
 h2 {
+    display: flex;
+    justify-content: center;
     font-weight: bold; 
     color: teal;
 }
@@ -6,4 +8,9 @@ h2 {
 img {
     height: 220px;
     width: 60%;
+}
+
+.text-center {
+    display: flex;
+    /* justify-content: center; */
 }

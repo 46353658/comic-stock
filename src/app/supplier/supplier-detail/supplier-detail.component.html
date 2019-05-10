@@ -1,36 +1,40 @@
 <div class="edit-supplier" *ngIf="supplier">
+  <br>
   <h2>Edit supplier</h2>
-  <div>
-      <label>Supplier Name:<br>
-        <input [(ngModel)]="supplier.name" placeholder="name"/>
-      </label>
+  <div class="supplier-detail">
+    <div>
+        <label>Supplier Name:<br>
+          <input [(ngModel)]="supplier.name" placeholder="name"/>
+        </label>
+    </div>
+    <br>
+    <div>
+        <label>Supplier City:<br>
+          <input [(ngModel)]="supplier.city" placeholder="city"/>
+        </label>
+    </div>
+    <br>
+    <div>
+        <label>Supplier Reference:<br>
+          <input [(ngModel)]="supplier.reference" placeholder="reference"/>
+        </label>
+    </div>
   </div>
-  <br>
-  <div>
-      <label>Supplier City:<br>
-        <input [(ngModel)]="supplier.city" placeholder="city"/>
-      </label>
+  <div class="edit-supplier-buttons">
+    <br style="line-height:8;"><br>
+    <button mat-raised-button (click)="save()">Save changes</button>
+    <!-- <button mat-raised-button (click)="deleteSupplier()">Delete supplier</button><br><br> -->
+    <button mat-flat-button color="warn"
+                    mwlConfirmationPopover
+                    [popoverTitle]="popoverTitle"
+                    [popoverMessage]="popoverMessage"
+                    placement="right"
+                    (confirm)="deleteSupplier()" 
+                    (cancel)="cancelClicked = true">
+              Delete supplier
+            </button><br><br>
+    <button mat-raised-button routerLink="/suppliers" (click)="goBack()">Go back</button>
   </div>
-  <br>
-  <div>
-      <label>Supplier Reference:<br>
-        <input [(ngModel)]="supplier.reference" placeholder="reference"/>
-      </label>
-  </div>
-  <br style="line-height:8;"><br>
-  <button mat-raised-button (click)="save()">Save changes</button>
-  <!-- <button mat-raised-button (click)="deleteSupplier()">Delete supplier</button><br><br> -->
-  <button mat-flat-button color="warn"
-                  mwlConfirmationPopover
-                  [popoverTitle]="popoverTitle"
-                  [popoverMessage]="popoverMessage"
-                  placement="right"
-                  (confirm)="deleteSupplier()" 
-                  (cancel)="cancelClicked = true">
-            Delete supplier
-          </button><br><br>
-  <button mat-raised-button routerLink="/suppliers" (click)="goBack()">Go back</button>
-  
 </div>
 
 <!-- <h1>supplier-detail</h1> -->

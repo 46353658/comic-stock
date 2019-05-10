@@ -5,16 +5,25 @@ label {
     padding-right: 10px;
 }
 
-input, label {
+/* input, label {
     float: left;
-}
+} */
 
 .supplier-heading {
+    display: flex;
+    justify-content: center;
     font-weight: bold;
     color: teal;
 }
 
+.supplier-search {
+    display: flex;
+    justify-content: center;
+}
+
 .add-supplier-heading {
+    display: flex;
+    justify-content: center;
     font-weight: bold;
     color: teal;
 }
@@ -24,7 +33,10 @@ input, label {
 }
 
 .add-supplier-details {
-    width: 70%;
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    align-items: center;
 }
 
 .add-supplier-details button:hover {
@@ -33,5 +45,10 @@ input, label {
 
 .edit-supplier-details {
     width: 70%;
+}
+
+.text-center {
+    display: flex;
+    /* justify-content: center; */
 }
 

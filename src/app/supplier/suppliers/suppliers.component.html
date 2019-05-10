@@ -1,7 +1,7 @@
 <br>
 <h2 class="supplier-heading">Suppliers</h2>
-<div class="row">
-  <input type="text" placeholder="        Search for a supplier" [(ngModel)]="searchText" />
+<div class="row" style="justify-content: center">
+  <input class="supplier-search" type="text" placeholder="        Search for a supplier" [(ngModel)]="searchText" />
 </div>
 <br>
 <br>
@@ -40,8 +40,8 @@
 </div> -->
 
 <div class="add-div" *ngIf="!selectedSupplier">
-  <h2 class="add-supplier-heading">Add supplier</h2>
-  <div class="add-supplier-details">
+  <h2 class="add-supplier-heading">Add a new supplier</h2>
+  <div class="add-supplier-details" style="justify-content: center">
     <label>Supplier Name:   
       <input #supplierName>
     </label>
@@ -53,7 +53,8 @@
     <label>Supplier Reference:
       <input #supplierReference>
     </label>
-    <br style="line-height:8;"><br>
+    <!-- <br style="line-height:3;"><br> -->
+    <br>
     <button mat-raised-button (click)="addSupplier(supplierName.value, supplierCity.value, supplierReference.value); 
                     supplierName.value=''; supplierCity.value=''; supplierReference.value=''">Add</button>
   </div>                 

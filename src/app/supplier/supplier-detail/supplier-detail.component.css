@@ -10,6 +10,25 @@ input, label {
 }
 
 h2 {
+    display: flex;
     font-weight: bold;
     color: teal;
+    justify-content: center;
 }
+
+.supplier-detail div{
+    display: flex;
+    justify-content: center;
+}
+
+.edit-supplier-buttons {
+    display: flex;
+    /* justify-content: center; */
+    justify-content: center;
+    align-items: center;
+}
+
+/* .edit-supplier {
+    display: flex;
+    flex-direction: column;
+} */
