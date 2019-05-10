@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 // import { SuppliersComponent } from './suppliers/suppliers.component';
 // import { SupplierDetailComponent } from './supplier/supplier-detail/supplier-detail.component';
 import { HttpClientModule } from '@angular/common/http';
-import { IssuesComponent } from './issues/issues.component';
+import { IssuesComponent } from './issue/issues/issues.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgxPaginationModule } from 'ngx-pagination';
