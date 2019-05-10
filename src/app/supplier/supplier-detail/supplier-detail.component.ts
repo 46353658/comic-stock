@@ -57,8 +57,10 @@ export class SupplierDetailComponent implements OnInit, OnDestroy {
   }
 
   deleteSupplier(): void {
-    this.deleteSupplierSubscription = this.supplierService.deleteSupplier(this.supplier)
-      .subscribe(() => this.goBack());
+    if (confirm(`Are you sure you want to delete ${this.supplier.name}?`)) {
+      this.deleteSupplierSubscription = this.supplierService.deleteSupplier(this.supplier)
+        .subscribe(() => this.goBack());
+    }
   }
 
   goBack(): void {
